@@ -85,6 +85,90 @@ To append posts to posts (where posts have child posts)
 ]
 ```
 
+To append revisions to posts
+
+**Request**
+
+```
+/wp-json/wp/v2/<post_type>?parent=0&orderby=menu_order&order=asc&append=revisions
+```
+
+**Response**
+
+```
+[
+    {
+        "id": 4,
+        "date": "2018-11-07T10:33:27",
+        "date_gmt": "2018-11-07T10:33:27",
+        "modified": "2018-11-07T10:59:55",
+        "modified_gmt": "2018-11-07T10:59:55",
+        "slug": "some-page",
+        "status": "publish",
+        "type": "page",
+        "title": {
+            "rendered": "Some Page"
+        },
+        "parent": 0,
+        "menu_order": 0,
+        "template": "",
+        "revisions": [
+            {
+                "id": 5,
+                "date": "2018-11-07T10:34:49",
+                "date_gmt": "2018-11-07T10:34:49",
+                "modified": "2018-11-07T10:46:12",
+                "modified_gmt": "2018-11-07T10:46:12",
+                "slug": "some-sub-page",
+                "status": "publish",
+                "type": "page",
+                "title": {
+                    "rendered": "Some Sub Page"
+                },
+                "parent": 4,
+                "menu_order": 0,
+                "template": "",
+                "children": [
+                    {
+		                "id": 7,
+		                "date": "2018-11-07T10:34:54",
+		                "date_gmt": "2018-11-07T10:34:54",
+		                "modified": "2018-11-07T10:46:06",
+		                "modified_gmt": "2018-11-07T10:46:06",
+		                "slug": "sub-sub-page",
+		                "status": "publish",
+		                "type": "page",
+		                "title": {
+		                    "rendered": "Sub Sub Page"
+		                },
+		                "parent": 5,
+		                "menu_order": 0,
+		                "template": ""
+		            }
+                ]
+            },
+            {
+                "id": 6,
+                "date": "2018-11-07T10:34:54",
+                "date_gmt": "2018-11-07T10:34:54",
+                "modified": "2018-11-07T10:46:06",
+                "modified_gmt": "2018-11-07T10:46:06",
+                "slug": "another-sub-page",
+                "status": "publish",
+                "type": "page",
+                "title": {
+                    "rendered": "Another Sub Page"
+                },
+                "parent": 4,
+                "menu_order": 0,
+                "template": ""
+            }
+        ]
+    }
+]
+```
+
+
 To append posts to terms (any custom taxonomy)
 
 **Request**
