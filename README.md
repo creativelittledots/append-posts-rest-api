@@ -1,6 +1,6 @@
 # Append Posts to REST API
 
-Get child posts or posts (and custom post types) belonging to categories (and custom taxonomies) in one single request.
+Get child posts, revisions or posts (and custom post types) belonging to categories (and custom taxonomies) in one single request.
 
 ## Children
 
