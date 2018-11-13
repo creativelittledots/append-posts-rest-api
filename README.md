@@ -2,6 +2,8 @@
 
 Get child posts or posts (and custom post types) belonging to categories (and custom taxonomies) in one single request.
 
+## Children
+
 To append posts to posts (where posts have child posts)
 
 **Request**
@@ -84,6 +86,8 @@ To append posts to posts (where posts have child posts)
     }
 ]
 ```
+
+## Revisions
 
 To append revisions to posts
 
@@ -168,6 +172,7 @@ To append revisions to posts
 ]
 ```
 
+## Terms
 
 To append posts to terms (any custom taxonomy)
 
