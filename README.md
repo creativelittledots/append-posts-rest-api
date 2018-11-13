@@ -131,25 +131,7 @@ To append revisions to posts
                 },
                 "parent": 4,
                 "menu_order": 0,
-                "template": "",
-                "children": [
-                    {
-		                "id": 7,
-		                "date": "2018-11-07T10:34:54",
-		                "date_gmt": "2018-11-07T10:34:54",
-		                "modified": "2018-11-07T10:46:06",
-		                "modified_gmt": "2018-11-07T10:46:06",
-		                "slug": "sub-sub-page",
-		                "status": "publish",
-		                "type": "page",
-		                "title": {
-		                    "rendered": "Sub Sub Page"
-		                },
-		                "parent": 5,
-		                "menu_order": 0,
-		                "template": ""
-		            }
-                ]
+                "template": ""
             },
             {
                 "id": 6,
