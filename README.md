@@ -2,6 +2,8 @@
 
 Get child posts, revisions or posts (and custom post types) belonging to categories (and custom taxonomies) in one single request.
 
+Also appends image property to posts so do not have to use the _embed url parameter in order to get the full size image url.
+
 ## Children
 
 To append posts to posts (where posts have child posts)
