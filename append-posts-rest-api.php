@@ -59,6 +59,24 @@ function append_posts_rest_api_prepare_post( $data, $item, $request ) {
 			if($posts_arr)
 				$data->data['children'] = $posts_arr;
 		}
+		if(in_array('revisions', $append)) {
+			$args = array(
+				'post_parent' => $item->ID,
+				'post_type' => 'revision',
+				'posts_per_page' => -1
+			);
+			$posts = get_posts( $args );
+			$posts_arr = array();
+			if(count($posts)) {
+				foreach ( $posts as $p ) {
+					$api = new WP_REST_Posts_Controller($p->post_type);
+			        $response = $api->prepare_item_for_response($p, $request);
+					$posts_arr[] = $response->data;
+				}
+			}
+			if($posts_arr)
+				$data->data['revisions'] = $posts_arr;
+		}
 	}
 	return $data;
 }
