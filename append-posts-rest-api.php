@@ -90,22 +90,3 @@ add_action('init', function() {
 		add_filter( 'rest_prepare_' . $type, 'append_posts_rest_api_prepare_post', 10, 3 );
 	}
 }, 999);
-
-add_action('rest_api_init', 'register_rest_images' );
-function register_rest_images(){
-    register_rest_field( get_post_types(array('show_in_rest' => true)),
-        'image',
-        array(
-            'get_callback'    => 'get_rest_featured_image',
-            'update_callback' => null,
-            'schema'          => null,
-        )
-    );
-}
-function get_rest_featured_image( $object, $field_name, $request ) {
-    if( $object['featured_media'] ){
-        $img = wp_get_attachment_image_src( $object['featured_media'], 'full' );
-        return $img[0];
-    }
-    return false;
-}
